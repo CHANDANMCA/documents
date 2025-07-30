@@ -3,14 +3,18 @@
 ## Open Source Kafka Startup in local ##
 
 1.Create Storage in Kafka
+
 ``` bin\windows\kafka-storage.bat format -t 769f88f8-d3bb-4a75-83ef-55f7a9349f0e -c config\kraft\server.properties```
 
 
 2. Start Kafka Server / Broker
+   
 ``` bin\windows\kafka-server-start.bat config\kraft\server.properties ```
 
 3. Create topic
+
   ``` .\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --create --topic test-topic --partitions 1 --replication-factor 1 ```
+
 4. list out all topic names
 
     ``` .\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list ```
