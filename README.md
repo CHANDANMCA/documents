@@ -12,8 +12,7 @@
 
 3. Create topic
 
-    ```sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic NewTopic --partitions 3 --replication-factor 1```
-
+   bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --create --topic my-topic --partitions 5 --replication-factor 1
 4. list out all topic names
 
     ``` sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --list ```
