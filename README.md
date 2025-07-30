@@ -3,15 +3,12 @@
 ## Open Source Kafka Startup in local ##
 
 1. Start Zookeeper Server
-
-    ```sh bin/zookeeper-server-start.sh config/zookeeper.properties```
+bin\windows\zookeeper-server-start.bat config/zookeeper.properties
 
 2. Start Kafka Server / Broker
-
-    ```sh bin/kafka-server-start.sh config/server.properties```
+bin\windows\kafka-server-start.bat config/server.properties
 
 3. Create topic
-
    bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --create --topic my-topic --partitions 5 --replication-factor 1
 4. list out all topic names
 
