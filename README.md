@@ -2,17 +2,18 @@
 
 ## Open Source Kafka Startup in local ##
 
-1. Start Zookeeper Server
-``` bin\windows\zookeeper-server-start.bat config/zookeeper.properties ```
+1.Create Storage in Kafka
+``` bin\windows\kafka-storage.bat format -t 769f88f8-d3bb-4a75-83ef-55f7a9349f0e -c config\kraft\server.properties```
+
 
 2. Start Kafka Server / Broker
-``` bin\windows\kafka-server-start.bat config/server.properties ```
+``` bin\windows\kafka-server-start.bat config\kraft\server.properties ```
 
 3. Create topic
-  ``` bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --create --topic my-topic --partitions 2 --replication-factor 1 ```
+  ``` .\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --create --topic test-topic --partitions 1 --replication-factor 1 ```
 4. list out all topic names
 
-    ``` bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list ```
+    ``` .\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list ```
 
 5. Describe topics
   
@@ -20,12 +21,12 @@
 
 6. Produce message
 
-    ```bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic my-topic```
+    ```  bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test-topic  ```
 
 
 7. consume message
 
-    ``` sh bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic NewTopic --from-beginning ```
+    ``` .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test-topic --from-beginning ```
 
 
 ## Confluent Kafka Community Edition in local ##
